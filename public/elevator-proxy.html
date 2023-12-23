@@ -1,66 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <title>Ultraviolet | Sophisticated Web Proxy</title>
-    <meta
-            name="description"
-            content="Ultraviolet is a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers. Unblock sites today!"
-    />
-    <meta
-            name="keywords"
-            content="proxy, web proxy, ultraviolet, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, un block chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass iboss, bypass lightspeed filter, holy unblocker, chromebooks, titanium network, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked"
-    />
-    <meta
-            name="theme-color"
-            media="(prefers-color-scheme: dark)"
-            content="#434c5e"
-    />
-    <meta name="googlebot" content="index, follow, snippet"/>
-    <link rel="shortcut icon" content="favicon.ico"/>
-    <link rel="stylesheet" href="index.css"/>
+    <title></title>
     <script src="/uv/uv.bundle.js" defer></script>
-    <script src="./uv/uv.config.js" defer></script>
-    <script src="./register-sw.js" defer></script>
-    <script src="./search.js" defer></script>
-    <script src="./index.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
+    <script src="/register-sw.js" defer></script>
+    <script src="/search.js" defer></script>
+    <script src="/index.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
-<div
-        title="Ultraviolet Logo"
-        class="flex-center logo-wrapper header-center"
->
-    <img class="logo" src="uv.png" alt="Ultraviolet"/>
-    <h1>Ultraviolet | TN</h1>
-</div>
-<div class="flex-center desc left-margin">
-    <p>
-        Ultraviolet is highly sophisticated proxy used for evading internet
-        censorship.
-    </p>
+<body class="default">
+<div class="proxynav" id="proxynav">
+    <ul>
+        <button onclick="location.href = '/'"><i class="fa-solid fa-house fa-lg" style="color: #282828;"></i></button>
+        <button onclick="reload()"><i class="fa-solid fa-rotate-right fa-lg" style="color: #282828;"></i></button>
+        <button onclick="erudaToggle()"><i class="fa-solid fa-code fa-lg" style="color: #282828;"></i></button>
+    </ul>
 </div>
 
-<form id="uv-form" class="flex-center">
-    <input
-            id="uv-search-engine"
-            value="https://www.google.com/search?q=%s"
-            type="hidden"
-    />
-    <input id="uv-address" type="text" placeholder="Search the web freely..."/>
-</form>
-<p id="uv-error"></p>
-<pre id="uv-error-code"></pre>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ"></script>
+<iframe id="iframeid"></iframe>
+
+<script src="https://kit.fontawesome.com/25552dd253.js" crossorigin="anonymous"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-WKJQ5QHQTJ');
+    let timeout;
+    const nav = document.getElementById('proxynav');
+    const navHeight = nav.offsetHeight;
+    const screenHeight = window.innerHeight;
+
+    function slideNavOff() {
+        nav.style.transform = 'translate(-50%, -' + navHeight + 'px)';
+    }
+
+    function slideNavIn() {
+        nav.style.transform = 'translate(-50%, 0)';
+    }
+
+    function resetTimer() {
+        clearTimeout(timeout);
+        slideNavIn();
+        timeout = setTimeout(slideNavOff, 5000);
+    }
+
+    // Add event listeners to handle mouseover and mouseout events on the entire document
+    document.addEventListener('mouseover', resetTimer);
+    document.addEventListener('mouseout', resetTimer);
+
+    // Initial call to start the timer
+    resetTimer();
+
+    function reload() {
+        document.getElementById("iframeid").src = document.getElementById("iframeid").src
+    }
+
+    function erudaToggle() {
+        const proccy = document.getElementById("iframeid");
+        if (!proccy) return;
+
+        const proccyWindow = proccy.contentWindow;
+        const proccyDocument = proccy.contentDocument;
+
+        if (!proccyWindow || !proccyDocument) return;
+
+        if (proccyWindow.eruda?._isInit) {
+            proccyWindow.eruda.destroy();
+        } else {
+            let script = proccyDocument.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/eruda";
+            script.onload = function() {
+                if (!proccyWindow) return;
+                proccyWindow.eruda.init();
+                proccyWindow.eruda.show();
+            }
+            proccyDocument.head.appendChild(script);
+        }
+    }
+
+    window.onload = function () {
+        let encodedUrl = sessionStorage.getItem("encodedUrl");
+        encodedUrl = "/uv/service/" + encodedUrl;
+        console.log(encodedUrl);
+        document.querySelector("#iframeid").src = encodedUrl;
+        let iframe = document.querySelector("#iframeId");
+        iframe.src = encodedUrl;
+    };
 </script>
 </body>
 </html>
