@@ -1,9 +1,11 @@
 a:hover {
     cursor: pointer;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
+
 * {
     padding: 0;
     margin: 0;
@@ -27,7 +29,7 @@ a:hover {
     background-color: rgba(30, 30, 30, 0.8);
     border: 2px solid rgba(30, 30, 30, 0.8);
     border-radius: var(--btn-rounding);
-    box-shadow: 0px 5px 10px 2px rgba(0,0,0,.8);
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, .8);
     outline: none;
     transition: 0.5s;
     color: gray;
@@ -47,6 +49,76 @@ a:hover {
 
 #uv-address:focus {
     width: 700px;
+}
+
+/* Navigation */
+
+.Navigation {
+    position: absolute;
+    align-content: center;
+    width: 1000px;
+    height: 120px;
+    background: rgba(30, 30, 30, 0.8);
+    border: 2px solid rgba(30, 30, 30, 0.8);
+    border-radius: var(--btn-rounding);
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.Navigation-Container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 1000px;
+}
+
+.Navigation-Container ul {
+    gap: 10px;
+    padding: 10px;
+    display: flex;
+    position: absolute;
+    transform: translateY(60px);
+}
+
+.Navigation-Button a {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    padding: 0.75em;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-color1);
+    border-radius: var(--btn-rounding);
+    transition: 0.25s;
+    justify-content: space-around;
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.Navigation-Button a:hover {
+    transition: 0.25s;
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+.Navigation-Container p {
+    transform: translateY(35px);
+    font-size: 20px;
+}
+
+#home-button #home-icon {
+    position: absolute;
+    width: 50px;
+    transition: 0.5s;
+}
+
+#home-button:hover #home-icon {
+    transition: 0.5s;
+    transform: translateY(-20px);
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, .8);
 }
 
 /* Proxy */
