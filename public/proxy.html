@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/uv/uv.bundle.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
+    <script src="/register-sw.js" defer></script>
+    <script src="/search.js" defer></script>
+    <script src="/index.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevator Labs</title>
+</head>
+
+<body class="default">
+<div class="center-container">
+    <center style="padding: 2em 0 0 0">
+        <h1 class = "search" style="margin-top: 25px; text-align:center;">Search</h1>
+        <form id="uv-form" class="flex-center">
+            <input
+                    id="uv-search-engine"
+                    value="https://www.google.com/search?q=%s"
+                    type="hidden"
+            >
+            <center style="">
+                <input id="uv-address" type="text" placeholder="Search the web freely..." />
+        <form>
+        <div class="desc left-margin">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+        </div>
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-WKJQ5QHQTJ');
+</script>
+</body>
+</html>
