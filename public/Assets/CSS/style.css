@@ -107,19 +107,46 @@ a:hover {
 .Navigation-Container p {
     transform: translateY(35px);
     font-size: 20px;
+    z-index:999;
 }
 
 #home-button #home-icon {
-    font-family: 'Material Icons';
     position: absolute;
-    width: 50px;
     transition: 0.5s;
+    font-size: 80px;
+    transform: translateY(-5px);
 }
 
 #home-button:hover #home-icon {
     transition: 0.5s;
-    transform: translateY(-20px);
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, .8);
+    transform: translateY(-15px);
+    text-shadow: 0px 5px  10px rgba(0, 0, 0, .8);
+}
+
+#games-button #games-icon {
+     position: absolute;
+     transition: 0.5s;
+     font-size: 80px;
+     transform: translateY(0px);
+ }
+
+#games-button:hover #games-icon {
+    transition: 0.5s;
+    transform: translateY(-15px);
+    text-shadow: 0px 5px  10px rgba(0, 0, 0, .8);
+}
+
+#settings-button #settings-icon {
+    position: absolute;
+    transition: 0.5s;
+    font-size: 70px;
+    transform: translateY(-5px);
+}
+
+#settings-button:hover #settings-icon {
+    transition: 0.5s;
+    transform: translateY(-15px);
+    text-shadow: 0px 5px  10px rgba(0, 0, 0, .8);
 }
 
 /* Proxy */
