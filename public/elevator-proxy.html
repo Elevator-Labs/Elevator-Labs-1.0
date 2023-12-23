@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Elevator Labs</title>
     <script src="/uv/uv.bundle.js" defer></script>
     <script src="/uv/uv.config.js" defer></script>
     <script src="/register-sw.js" defer></script>
@@ -9,6 +9,7 @@
     <script src="/index.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./Assets/CSS/main.css">
 </head>
 
 <body class="default">
@@ -68,7 +69,7 @@
         } else {
             let script = proccyDocument.createElement('script');
             script.src = "https://cdn.jsdelivr.net/npm/eruda";
-            script.onload = function() {
+            script.onload = function () {
                 if (!proccyWindow) return;
                 proccyWindow.eruda.init();
                 proccyWindow.eruda.show();

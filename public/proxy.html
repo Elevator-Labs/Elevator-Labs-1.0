@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <title>Elevator Labs</title>
     <script src="/uv/uv.bundle.js" defer></script>
     <script src="/uv/uv.config.js" defer></script>
     <script src="/register-sw.js" defer></script>
@@ -9,13 +10,23 @@
     <script src="/index.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elevator Labs</title>
+    <link rel="stylesheet" type="text/css" href="./Assets/CSS/main.css">
 </head>
 
 <body class="default">
+<nav class="Navigation">
+    <div class="Navigation-Container">
+        <a class="Nav-Image" href="./"></a>
+        <ul>
+            <br>
+            <li class="Navigation-Button"><a href="./"><i class="button home"></i><p>Home</p></a></li>
+            <li class="Navigation-Button"><a href="./proxy.html"><i class="button proxy"></i><p>Proxy</p></a></li>
+        </ul>
+    </div>
+</nav>
 <div class="center-container">
     <center style="padding: 2em 0 0 0">
-        <h1 class = "search" style="margin-top: 25px; color: var(--text-color1); text-align:center;">Search</h1>
+        <h1 class="search" style="margin-top: 25px; color: var(--text-color1); text-align:center;">Search</h1>
         <form id="uv-form" class="flex-center">
             <input
                     id="uv-search-engine"
@@ -23,7 +34,7 @@
                     type="hidden"
             />
             <center style="padding: 2em 1 0 0">
-                <input id="uv-address" type="text" placeholder="Search the web freely..." />
+                <input id="uv-address" type="text" placeholder="Search the web freely..."/>
         </form>
         <div class="desc left-margin">
             <p id="uv-error"></p>
@@ -34,11 +45,14 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
     gtag('config', 'G-WKJQ5QHQTJ');
 </script>
 </div>
-</body>
 </body>
 </html>

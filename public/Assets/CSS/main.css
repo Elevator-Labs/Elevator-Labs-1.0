@@ -1,0 +1,6 @@
+/* Third Party CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
+
+/* CSS Files */
+@import url('style.css');
+@import url('theme.css');

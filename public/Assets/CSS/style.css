@@ -1,0 +1,55 @@
+a:hover {
+    cursor: pointer;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+.Title-Container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    font-family: Poppins, "Trebuchet MS", sans-serif;
+    color: var(--text-color1)
+}
+
+/* Navigation */
+.Navigation {
+    width: 100%;
+    height: 80px;
+    border-radius: 0 0 var(--btn-rounding) var(--btn-rounding);
+    background-color: var(--btn-accent2);
+    display: flex;
+}
+.Navigation-Container {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.Navigation-Container ul {
+    gap: 15px;
+    display: flex;
+    position: absolute;
+}
+.Navigation-Button a {
+    display: flex;
+    align-items: center;
+    padding: 0.75em;
+    color: var(--text-color1);
+    background-color: var(--btn-accent);
+    border-radius: var(--btn-rounding);
+    border: 0 solid var(--btn-accent);
+}

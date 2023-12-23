@@ -1,0 +1,22 @@
+body {
+    --btn-rounding: 10px;
+
+    /* Dark Theme */
+    --bg-accent1: rgb(15, 15, 15);
+    --bg-accent2: rgb(50, 50, 50);
+    --bg-accent3: rgb(30, 30, 30);
+    --text-color1: rgb(255, 255, 255);
+    --text-shadow: rgba(20, 20, 20, 0.5);
+    --btn-accent: rgba(60, 60, 60);
+    --btn-accent2: rgba(60, 60, 60, 0.75);
+    --btn-box-shadow: rgba(70, 70, 70, 0.5);
+    --nav-box-hover: var(--text-color1);
+    --theme-accent: #38B6FF;
+
+    background:var(--bg-accent3);
+    height: 100vh;
+}
+
+html, body {
+    overflow: hidden;
+}
