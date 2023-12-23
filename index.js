@@ -69,6 +69,6 @@ function shutdown() {
     process.exit(0);
 }
 
-server.listen({
-    port,
-});
+server.listen(port, () => {
+    console.log(`Started on port ${port}`)
+})
