@@ -15,43 +15,33 @@ a:hover {
     overflow: -moz-scrollbars-none;
     scrollbar-width: none;
 }
-.Title-Container {
+
+#uv-address {
     position: absolute;
-    transform: translate(-50%, -50%);
+    top: 30%;
+    transform: translateX(-50%);
     text-align: center;
-    left: 50%;
-    top: 50%;
-    font-family: Poppins, "Trebuchet MS", sans-serif;
-    color: var(--text-color1)
+    width: 430px;
+    height: 80px;
+    font-family: Poppins, sans-serif;
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 2px solid rgba(30, 30, 30, 0.8);
+    border-radius: var(--btn-rounding);
+    box-shadow: 0px 5px 10px 2px rgba(0,0,0,.8);
+    outline: none;
+    transition: 0.5s;
+    color: black;
+    font-size: 30px;
 }
 
-/* Navigation */
-.Navigation {
-    width: 100%;
-    height: 80px;
-    border-radius: 0 0 var(--btn-rounding) var(--btn-rounding);
-    background-color: var(--btn-accent2);
-    display: flex;
+#uv-address:hover {
+    transition: 0.5s;
+    transform: translate(-50%) scale(1.1, 1.1);
+    border: 2px solid rgba(30, 30, 30, 0.8);
 }
-.Navigation-Container {
-    width: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-}
-.Navigation-Container ul {
-    gap: 15px;
-    display: flex;
-    position: absolute;
-}
-.Navigation-Button a {
-    display: flex;
-    align-items: center;
-    padding: 0.75em;
-    color: var(--text-color1);
-    background-color: var(--btn-accent);
-    border-radius: var(--btn-rounding);
-    border: 0 solid var(--btn-accent);
+
+#uv-address:focus {
+    width: 700px;
 }
 
 /* Proxy */
