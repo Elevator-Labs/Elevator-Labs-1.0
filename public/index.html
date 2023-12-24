@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="./Assets/CSS/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
           rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body class="default">
 <nav class="Navigation">
@@ -40,6 +42,10 @@
             <pre id="uv-error-code"></pre>
         </div>
 </div>
+
+<div id="news-container">
+</div>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -51,6 +57,87 @@
     gtag('js', new Date());
     gtag('config', 'G-WKJQ5QHQTJ');
 </script>
+<script>
+    AOS.init();
+</script>
+<script>
+    const jsonUrl = './Assets/News/news.json'
+
+    fetch(jsonUrl).then(response => response.json()).then(data => {
+        const renderNews = (news) => {
+            news.forEach(news => {
+                const newsContainer = document.getElementById('news-container')
+                const imgContainer = document.createElement('div')
+                const img = document.createElement('img')
+
+                newsContainer.appendChild(imgContainer)
+                imgContainer.classList.add('img-container');
+                img.classList.add('news-img')
+
+                img.src = news.img
+                img.alt = 'No image found'
+
+                imgContainer.appendChild(img)
+
+                console.log('card')
+            });
+        }
+
+        //renderNews(data);
+    });
+</script>
+<script>
+    /*const jsonUrl = './Assets/News/news.json';
+
+    fetch(jsonUrl).then(response => response.json()).then(data => {
+        const renderNews = (news) => {
+            news.forEach(news => {
+                const newsContainer = document.getElementById('news-container')
+                const imgContainer = document.createElement('div')
+                const img = document.createElement('img')
+                const header = document.createElement('div')
+                const content = document.createElement('div')
+                const author = document.createElement('div')
+                const date = document.createElement('div')
+                const text = document.createElement('div')
+                const authorImg = document.createElement('img')
+
+                newsContainer.appendChild(imgContainer)
+                imgContainer.classList.add('img-container');
+                header.classList.add('header');
+                content.classList.add('content');
+                author.classList.add('author');
+                date.classList.add('date');
+                text.classList.add('text');
+                authorImg.classList.add('authorImg');
+
+
+                img.src = news.img
+                img.alt = 'No image found'
+                content.innerHTML = news.content
+                text.innerHTML = news.author
+                date.innerHTML = news.date
+                authorImg.src = news.authorImg
+                content.innerHTML = news.content
+
+                imgContainer.appendChild(img)
+                newsContainer.appendChild(header)
+                header.appendChild(author)
+                author.appendChild(authorImg)
+                author.appendChild(text)
+                header.appendChild(date)
+                newsContainer.appendChild(content)
+
+                console.log('card')
+            });
+        }
+
+        renderNews(data);
+    });
+
+     */
+</script>
+<script src="./Assets/JS/home.js"></script>
 </div>
 </body>
 </html>

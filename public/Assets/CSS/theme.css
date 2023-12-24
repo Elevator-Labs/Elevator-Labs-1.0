@@ -16,7 +16,3 @@ body {
     background: linear-gradient(var(--theme-accent), black);
     height: 100vh;
 }
-
-html, body {
-    overflow: hidden;
-}

@@ -2,21 +2,15 @@ a:hover {
     cursor: pointer;
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
-
 * {
     padding: 0;
     margin: 0;
     font-family: "Poppins", sans-serif;
     list-style-type: none;
     text-decoration: none;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
-    scrollbar-width: none;
 }
+
+/* Home Page */
 
 #uv-address {
     position: absolute;
@@ -49,6 +43,61 @@ a:hover {
 
 #uv-address:focus {
     width: 700px;
+}
+
+.img-container img {
+    display: none;
+    max-width: 300px;
+    object-fit: cover;
+}
+
+.img-container {
+    width: 300px;
+    height: 200px;
+}
+
+#news-container {
+    max-width: 200px;
+    position: relative;
+    margin: auto;
+    top: 30%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
 /* Navigation */
@@ -107,7 +156,7 @@ a:hover {
 .Navigation-Container p {
     transform: translateY(35px);
     font-size: 20px;
-    z-index:999;
+    z-index: 999;
 }
 
 #home-button #home-icon {
@@ -120,20 +169,20 @@ a:hover {
 #home-button:hover #home-icon {
     transition: 0.5s;
     transform: translateY(-15px);
-    text-shadow: 0px 5px  10px rgba(0, 0, 0, .8);
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, .8);
 }
 
 #games-button #games-icon {
-     position: absolute;
-     transition: 0.5s;
-     font-size: 80px;
-     transform: translateY(0px);
- }
+    position: absolute;
+    transition: 0.5s;
+    font-size: 80px;
+    transform: translateY(0px);
+}
 
 #games-button:hover #games-icon {
     transition: 0.5s;
     transform: translateY(-15px);
-    text-shadow: 0px 5px  10px rgba(0, 0, 0, .8);
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, .8);
 }
 
 #settings-button #settings-icon {
@@ -146,7 +195,7 @@ a:hover {
 #settings-button:hover #settings-icon {
     transition: 0.5s;
     transform: translateY(-15px);
-    text-shadow: 0px 5px  10px rgba(0, 0, 0, .8);
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, .8);
 }
 
 /* Proxy */
