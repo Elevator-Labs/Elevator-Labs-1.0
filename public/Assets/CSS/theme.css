@@ -11,7 +11,7 @@ body {
     --btn-accent2: rgba(60, 60, 60, 0.75);
     --btn-box-shadow: rgba(70, 70, 70, 0.5);
     --nav-box-hover: var(--text-color1);
-    --theme-accent: rgb(50, 200, 50);
+    --theme-accent: rgb(50, 50, 288);
 
     background: linear-gradient(var(--theme-accent), black);
     height: 100vh;

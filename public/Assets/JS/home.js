@@ -1,23 +1,25 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+const timeText = document.getElementById('time-display');
+timeText.innerHTML = getCurrentTime();
 
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+function getCurrentTime() {
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    const currentTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+    return currentTime;
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function updateTime() {
+    timeText.innerHTML = getCurrentTime();
 }
 
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("news-img");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex-1].style.display = "block";
-}
+setInterval(updateTime, 1000);
