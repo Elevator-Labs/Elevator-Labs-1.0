@@ -285,6 +285,7 @@ iframe {
 #normal:hover {
     transition: .5s;
     transform: scale(1.2);
+    cursor: pointer;
 }
 
 #classroom img {
@@ -294,6 +295,7 @@ iframe {
 #classroom:hover {
     transition: .5s;
     transform: scale(1.2);
+    cursor: pointer;
 }
 
 .customPanicKey {
