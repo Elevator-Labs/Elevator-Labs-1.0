@@ -13,6 +13,8 @@ body {
     --nav-box-hover: var(--text-color1);
     --theme-accent: rgb(50, 50, 288);
 
+    overflow: hidden;
+
     background: linear-gradient(var(--theme-accent), black);
     height: 100vh;
 }

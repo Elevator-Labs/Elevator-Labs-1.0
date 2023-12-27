@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elevator Labs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./Assets/CSS/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+          rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="icon" href="./Assets/Img/Icons/Logo.png">
+</head>
+<body class="default">
+<div id="bg"></div>
+<nav class="Navigation">
+    <div class="Navigation-Container">
+        <ul>
+            <li class="Navigation-Button" id="home-button"><a href="./"><span class="material-icons-outlined" id="home-icon">science</span><p>Home</p></a></li>
+            <li class="Navigation-Button" id="games-button"><a href="./"><span class="material-icons-outlined" id="games-icon">videogame_asset</span><p>Games</p></a></li>
+            <li class="Navigation-Button" id="settings-button"><a href="./settings.html"><span class="material-icons-outlined" id="settings-icon">settings</span><p>Settings</p></a></li>
+        </ul>
+    </div>
+</nav>
+<div id="settings" class="header-title">Settings</div>
+
+<h1 class="settings-header">
+    Appearance
+</h1>
+
+<div class="appearance-container">
+    <h3 id="cloak-title">Tab Cloaking</h3>
+    <button data-aos="zoom-in" id="normal" class="appearance-button" onclick='localStorage.removeItem("cloak"); window.location.reload();'><img src="./Assets/Img/Icons/Logo.png" title="Elevator Labs"></button>
+    <button data-aos="zoom-in" id="classroom" class="appearance-button" onclick='setIcon("./Assets/Img/Icons/Cloaks/classroom.png", "Home");'><img src="./Assets/Img/Icons/Cloaks/classroom.png" title="Google Classroom"></button>
+</div>
+
+
+
+<script type="text/javascript" src="./Assets/JS/particles.js"></script>
+<script type="text/javascript" src="./Assets/JS/custom.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="./Assets/JS/settings.js"></script>
+<script>
+    function setIcon(img, name) { localStorage.removeItem('cloak'); var icon = JSON.parse(localStorage.getItem("cloak")) || []; icon.push({ img: img, name: name }); localStorage.setItem("cloak", JSON.stringify(icon)); window.location.reload(); }
+    document.getElementById('themes').addEventListener('change', () => { localStorage.setItem("theme", document.getElementById('themes').value); window.location.reload(); });
+    function panic(v) {
+        let panic = JSON.parse(localStorage.getItem('panic')) || [{ url: "", key: "" }];
+        let key = document.querySelector(".customPanicKey").value;
+        let url = document.querySelector(".customPanicUrl").value;
+        if (v === 'key') { panic[0].key = key; } else if (v === 'url') { panic[0].url = url; }
+        localStorage.setItem("panic", JSON.stringify(panic));
+    }
+</script>
+</body>
+</html>
